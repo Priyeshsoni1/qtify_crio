@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./search.css";
 import { Box } from "@mui/material";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import SearchResults from "../searchResults/SearchResults";
 import CloseIcon from "@mui/icons-material/Close";
 import Logo from "../logo/Logo";
@@ -10,25 +10,25 @@ import Logo from "../logo/Logo";
 const Search = ({ placeHolder, type }) => {
   const [searchInput, setSearchInput] = useState("");
   const [searchData, setSearchData] = useState([]);
-  const { songs, status } = useSelector((state) => state.song);
-  const handleChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-  useEffect(() => {
-    const query = searchInput.replace(/\s/g, "").toLowerCase();
-    filterSongsBySearch(songs, query);
-  }, [searchInput]);
+  // const { songs, status } = useSelector((state) => state.song);
+  // const handleChange = (e) => {
+  //   setSearchInput(e.target.value);
+  // };
+  // useEffect(() => {
+  //   const query = searchInput.replace(/\s/g, "").toLowerCase();
+  //   filterSongsBySearch(songs, query);
+  // }, [searchInput]);
 
-  const filterSongsBySearch = (songs, searchInput) => {
-    if (searchInput === "") {
-      setSearchData([]);
-    } else {
-      const filteredSongs = songs.filter((song) =>
-        song.title.replace(/\s/g, "").toLowerCase().includes(searchInput)
-      );
-      setSearchData(filteredSongs);
-    }
-  };
+  // const filterSongsBySearch = (songs, searchInput) => {
+  //   if (searchInput === "") {
+  //     setSearchData([]);
+  //   } else {
+  //     const filteredSongs = songs.filter((song) =>
+  //       song.title.replace(/\s/g, "").toLowerCase().includes(searchInput)
+  //     );
+  //     setSearchData(filteredSongs);
+  //   }
+  // };
   return (
     <Box
       sx={{
@@ -46,7 +46,7 @@ const Search = ({ placeHolder, type }) => {
           className={type === "mobile" ? "search-input-mobile" : "search-input"}
           type="text"
           placeholder={placeHolder}
-          onChange={handleChange}
+          // onChange={handleChange}
           value={searchInput}
         />
         {type === "mobile" ? (
