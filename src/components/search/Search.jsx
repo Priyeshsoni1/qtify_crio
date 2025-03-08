@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { ReactComponent as SearchIcon } from "../../assets/Search icon.svg";
+
 import "./search.css";
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
@@ -59,7 +59,9 @@ const Search = ({ placeHolder, type }) => {
           <Box className="close-button">
             {searchInput.length > 0 ? (
               <CloseIcon onClick={() => setSearchInput("")} />
-            ) : null}
+            ) : (
+              <img src={"../../assets/Searchicon.svg"} alt="Search Icon" />
+            )}
           </Box>
         )}
       </form>
